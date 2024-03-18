@@ -16,6 +16,8 @@ public class AppConfig {
     // The default name is method name. We can define custom names like below.
     //@Bean(name = {"alien1", "alien2"})
     @Bean
+    // Computer is added as argument for loose coupling.
+    // If there is a bean of that type, it will be injected here.
     public Alien alien(Computer computer) {
         Alien alien = new Alien();
         alien.setAge(26);
