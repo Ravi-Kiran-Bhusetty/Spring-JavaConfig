@@ -2,13 +2,20 @@ package org.learn;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Alien {
 
+    @Value("26")
     private int age;
     private Computer computer;
+
+    @Autowired
+    public Alien(Computer computer) {
+        this.computer = computer;
+    }
 
     public Alien() {
         System.out.println("Alien Object Created");
@@ -16,6 +23,7 @@ public class Alien {
 
     public void code() {
         System.out.println("Alien Coding");
+        System.out.println(getAge());
         computer.compile();
     }
 
@@ -31,7 +39,6 @@ public class Alien {
         return computer;
     }
 
-    @Autowired
     public void setComputer(Computer computer) {
         this.computer = computer;
     }
