@@ -10,9 +10,18 @@ public class AppConfig {
 
     // We return the object. But lifecycle is maintained by Spring.
     // The default name is method name. We can define custom names like below.
-    @Bean(name = {"alien1", "alien2"})
+    //@Bean(name = {"alien1", "alien2"})
+    @Bean
     public Alien alien() {
-        return new Alien();
+        Alien alien = new Alien();
+        alien.setAge(26);
+        alien.setDesktop(desktop());
+        return alien;
+    }
+
+    @Bean
+    public Desktop desktop() {
+        return new Desktop();
     }
 
 }
