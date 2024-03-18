@@ -18,7 +18,7 @@ public class App
         alien.code();
 
         // New object won't be created because scope is singleton
-        Alien alien2 = context.getBean(Alien.class);
+        Alien alien2 = context.getBean("alien2", Alien.class);
         alien2.code();
 
     }

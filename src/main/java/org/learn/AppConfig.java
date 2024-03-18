@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
 
-    // We return the object. But lifecycle is maintained by Spring
-    @Bean
-    @Scope("prototype")
+    // We return the object. But lifecycle is maintained by Spring.
+    // The default name is method name. We can define custom names like below.
+    @Bean(name = {"alien1", "alien2"})
     public Alien alien() {
         return new Alien();
     }
