@@ -7,6 +7,7 @@ import org.learn.Laptop;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
 // Config class. Defined by below annotation
@@ -19,7 +20,7 @@ public class AppConfig {
     @Bean
     // Computer is added as argument for loose coupling.
     // If there is a bean of that type, it will be injected here.
-    public Alien alien(@Qualifier("laptop") Computer computer) {
+    public Alien alien(Computer computer) {
         Alien alien = new Alien();
         alien.setAge(26);
         alien.setComputer(computer);
@@ -27,6 +28,7 @@ public class AppConfig {
     }
 
     @Bean
+    @Primary
     public Desktop desktop() {
         return new Desktop();
     }
