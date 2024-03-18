@@ -4,7 +4,7 @@ package org.learn;
 public class Alien {
 
     private int age;
-    private Desktop desktop;
+    private Computer computer;
 
     public Alien() {
         System.out.println("Alien Object Created");
@@ -12,7 +12,7 @@ public class Alien {
 
     public void code() {
         System.out.println("Alien Coding");
-        desktop.compile();
+        computer.compile();
     }
 
     public int getAge() {
@@ -23,11 +23,11 @@ public class Alien {
         this.age = age;
     }
 
-    public Desktop getDesktop() {
-        return desktop;
+    public Computer getComputer() {
+        return computer;
     }
 
-    public void setDesktop(Desktop desktop) {
-        this.desktop = desktop;
+    public void setComputer(Computer computer) {
+        this.computer = computer;
     }
 }

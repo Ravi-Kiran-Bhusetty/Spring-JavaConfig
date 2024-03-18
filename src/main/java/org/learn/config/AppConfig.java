@@ -1,5 +1,7 @@
-package org.learn;
+package org.learn.config;
 
+import org.learn.Alien;
+import org.learn.Desktop;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -15,7 +17,7 @@ public class AppConfig {
     public Alien alien() {
         Alien alien = new Alien();
         alien.setAge(26);
-        alien.setDesktop(desktop());
+        alien.setComputer(desktop());
         return alien;
     }
 
