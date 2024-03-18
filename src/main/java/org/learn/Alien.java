@@ -1,6 +1,10 @@
 package org.learn;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
 
     private int age;
@@ -27,6 +31,7 @@ public class Alien {
         return computer;
     }
 
+    @Autowired
     public void setComputer(Computer computer) {
         this.computer = computer;
     }
