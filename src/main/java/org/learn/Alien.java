@@ -12,7 +12,7 @@ public class Alien {
     private int age;
     private Computer computer;
 
-    @Autowired
+
     public Alien(Computer computer) {
         this.computer = computer;
     }
@@ -39,6 +39,7 @@ public class Alien {
         return computer;
     }
 
+    @Autowired
     public void setComputer(Computer computer) {
         this.computer = computer;
     }
