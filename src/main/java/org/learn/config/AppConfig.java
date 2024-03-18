@@ -1,7 +1,9 @@
 package org.learn.config;
 
 import org.learn.Alien;
+import org.learn.Computer;
 import org.learn.Desktop;
+import org.learn.Laptop;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -14,10 +16,10 @@ public class AppConfig {
     // The default name is method name. We can define custom names like below.
     //@Bean(name = {"alien1", "alien2"})
     @Bean
-    public Alien alien() {
+    public Alien alien(Computer computer) {
         Alien alien = new Alien();
         alien.setAge(26);
-        alien.setComputer(desktop());
+        alien.setComputer(computer);
         return alien;
     }
 
@@ -25,5 +27,9 @@ public class AppConfig {
     public Desktop desktop() {
         return new Desktop();
     }
+
+/*    public Laptop laptop() {
+        return new Laptop();
+    }*/
 
 }
